@@ -1,0 +1,290 @@
+body{
+    background: url("../images/bg-bg.png") repeat-x ;
+    height: 99999px;
+}
+
+.w{
+    width: 940px;
+    margin: 0 auto;
+}
+.header{
+  padding-top: 37px ;
+    padding-bottom: 46px;
+
+}
+
+.logo{
+    margin-left: 15px;
+}
+.headnav{
+    float: right;
+    margin-top: 22px;
+
+}
+
+.headnav ul li{
+    display: inline-block;
+    border-left: 1px rgb(214,214,214) dashed;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 8px;
+
+}
+.headnav ul li a{
+    color: rgb(102,102,102);;
+    font: bold 10px  Georgia;
+}
+
+.headnav p{
+    font: 11px tahoma;
+    color: rgb(199,199,199);
+
+}
+.headnav ul li a:hover{
+    color: rgb(150,150,150);
+}
+.headnav p:hover{
+
+    color: rgb(210,210,210);
+
+}
+
+.banner{
+   background: url("../images/shadow.png") no-repeat bottom center;
+    height: 356px;
+    position: relative;
+}
+.icon{
+    position: absolute;
+    top: 314px;
+    left: 15px;
+}
+.icon a{
+    float: left;
+    width: 17px;
+    height: 17px;
+    background:url("../images/icon1.png") no-repeat;
+    margin-left: 4px;
+
+}
+.icon .active,
+.icon a:hover
+{
+
+    background:url("../images/icon-active.png") no-repeat;
+}
+.clearfix:after,.clearfix:before{
+    content: "";
+    display: table;
+    clear: both;
+}
+.content{
+
+}
+
+.content h1{
+    text-align: center;
+    color: black;
+    font:   bold   24px  Georgia  ;
+    padding-bottom: 10px;
+    padding-top:  6px;
+    background: url("../images/break.png") no-repeat bottom center;
+    margin-bottom: 38px;
+}
+
+.pl {
+
+    width: 300px;
+
+    float: left;
+}
+.cs{
+
+    width: 300px;
+
+    float: left;
+    margin: 0 20px 0 20px;
+}
+.uc{
+
+    width: 300px;
+
+    float: left;
+}
+.content a:hover{
+    color:  rgb(210,210,210);
+}
+
+.contentimg{
+
+}
+
+.content1shadow{
+    width: 299px;
+    height: 192px;
+    background: url("../images/content1bre.png") no-repeat ;
+    margin:16px 0 10px 0 ;
+    text-align: center;
+    padding-top: 10px;
+}
+.content h2{
+    color: #11719e;
+    font: 21px Georgia ;
+}
+.content .p1{
+    color: #8c8c8c;
+    font: 12px Myriad Pro;
+}
+.content .p2{
+    height: 92px;
+    color: #3e3e3e;
+    font: 13px Myriad Pro;
+}
+.lm{
+    display: block;
+    width: 163px;
+    height: 40px;
+    background: url("../images/lm.png") no-repeat;
+    color: #016999;
+    font: 12px/40px Myriad Pro;
+    text-indent: 1em;
+    margin-bottom: 35px;
+}
+.contact{
+    background: url("../images/contactshad.png") no-repeat top center;
+
+    padding-top: 43px;
+    position: relative;
+}
+.sc{
+    width: 300px;
+    float: left;
+}
+.ct{
+    height: 100px;
+
+    width: 300px;
+    float: left;
+    margin: 0 20px 0 20px;
+}
+.nu{
+    height: 100px;
+
+    width: 300px;
+    float: left;
+}
+
+
+
+.p3{
+    padding-bottom: 5px;
+    color: #444444;
+    font: 18px/1 Social Connection;
+    border-bottom: 1px #444444 dashed;
+}
+
+.p4{
+    margin-top: 13px;
+    color: #444444;
+    font: 12px Myriad Pro;
+}
+.connect{
+
+
+}
+.connect a{
+    margin-left: 3px;
+    margin-top: 10px;
+    width: 56px;
+    height: 56px;
+    float: left;
+}
+
+.letter h2{
+    margin: 100px 0 10px 0;
+    border-bottom: 1px  #444444 dashed;
+
+}
+.text{
+    width: 286px;
+    height: 33px;
+    background:url("../images/letter.png") no-repeat;
+    border: none;
+    padding: 0 5px 0 5px;
+    line-height: 33px;
+}
+.send{
+    width: 163px;
+    height: 32px;
+    color: #ffffff;
+    background:url("../images/bt1.png") no-repeat;
+    text-align: left;
+    text-indent: 1em;
+    margin-top: 10px;
+}
+.send:hover{
+    color:  rgb(210,210,210);
+}
+
+.tare{
+    font: 13px Georgia ;
+    width: 286px;
+    height: 134px;
+    background:url("../images/tare.png") no-repeat;
+    border: none;
+    overflow: auto;
+    resize: none;
+    padding:0 5px 0 5px;
+    margin-top: 20px;
+}
+
+.bt2{
+    width: 163px;
+    height: 32px;
+    background: url("../images/bt1.png") no-repeat;
+    text-align: left;
+    text-indent: 1em;
+    color: #ffffff;
+    font: 13px Georgia ;
+    margin-top: 10px;
+}
+.bt2:hover{
+    color:  rgb(210,210,210);
+    cursor: pointer;
+}
+.nu img{
+    float: left;
+    margin-right: 8px;
+}
+
+.nu p{
+    margin-bottom: 20px;
+    height:56px ;
+    font: 12px/1 Myriad Pro;
+    color: #444444;
+    border-bottom: 1px #444444 dashed;
+    padding-bottom: 9px;
+
+}
+.footer{
+    height: 173px;
+    background-color: #333333;
+    margin-top: 23px;
+    border-top: 10px solid #4c4c4c;
+}
+.footer a, .footer p{
+    color: #999;
+    font: 11px "Myriad Pro" ;
+}
+.footer .w{
+    padding-top: 18px;
+}
+.footer p{
+    margin-left: 8px;
+    margin-right: 23px;
+
+    margin-bottom: 12px;
+}
+.footer a:hover{
+    color:  rgb(210,210,210);
+}
