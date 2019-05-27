@@ -1,0 +1,203 @@
+*{
+    box-sizing: border-box;
+    transition: background 200ms;
+}
+img{
+    display: block;
+    max-width: 100%;
+}
+body{
+    background: #f5f5f5;
+    font-size: 14px;
+    line-height: 1.7;
+}
+a{
+    text-decoration: none;
+}
+.container{
+    max-width: 1080px;
+    display: block;
+    margin: 0 auto;
+}
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.clearfix:before,
+.clearfix:after
+{
+    content: "";
+    display: block;
+    clear: both;
+}
+.logo{
+    width: 20%;
+    float: left;
+    position: relative;
+}
+.search{
+    width: 50%;
+    float: left;
+    position: relative;
+}
+.shopping{
+    width: 30%;
+    float: left;
+    position: relative;
+}
+.list-tag{
+    width: 20%;
+    float: left;
+    position: relative;
+}
+.img{
+    width: 60%;
+    float: left;
+    position: relative;
+}
+.user{
+    width: 20%;
+    float: left;
+    position: relative;
+}
+.nav{
+    background-color: #eeeeee;
+}
+.nav a {
+    padding: 6px 10px;
+    display: inline-block;
+    color: #666;
+}
+.nav a:hover{
+    color: #333;
+}
+.header{
+    padding: 20px 0;
+}
+.header .logo{
+    font-size: 30px;
+}
+.header .search{
+    border: 1px solid red;
+    background-color: red;
+}
+.header .search input,
+.header .search button{
+    border: 0;
+    padding: 10px;
+}
+.header .search input{
+    width: 80%;
+    float: left;
+    outline: 0;
+
+}
+.header .search button{
+    width: 20%;
+    float: left;
+    background: #dd182b;
+    color: #ffffff;
+}
+.header .search input:focus{
+
+    box-shadow:inset  0 0 2px 2px rgba(0,0,0,0.1);
+}
+.header .search button:hover{
+    background-color:#ce1829 ;
+}
+.header .shopping a{
+    float: right;
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #eeeeee;
+    width: 80%;
+    text-align: center;
+    color: #dd182b;
+}
+.main-promote{
+    background: #eeeeee;
+}
+.main-promote .list-tag{
+    width: 20%;
+    float: left;
+    position: relative;
+    background-color: #6e6568;
+}
+.main-promote .list-tag .item{
+    padding: 10px 20px;
+}
+.main-promote .list-tag .item:hover{
+    background: rgba(0,0,0,0.2);
+}
+.main-promote .img{
+    width: 60%;
+    float: left;
+    position: relative;
+}
+.main-promote .user{
+    width: 20%;
+    float: left;
+    position: relative;
+    padding: 10px;
+    box-shadow: 0 0 2px rgba(0,0,0,0.1);
+    color: #777777;
+
+
+
+}
+.main-promote .user .userimg{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #777;
+    float: left;
+    margin-right: 10px;
+}
+.main-promote .user >*{
+    margin-bottom: 10px;
+}
+.cat-promote .title:before{
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    width: 5px;
+    height: 20px;
+    background:#dd182b ;
+    margin-right: 20px;
+
+}
+/*形成方块 vertical-align只对行内元素有效 */
+.cat-promote .title{
+    font-size: 20px;
+}
+.cat-promote .item{
+    width: 25%;
+    float: left;
+    display: block;
+    position: relative;
+    padding: 5px;
+}
+.cat-promote .item .card{
+    height: 300px;
+    display: block;
+    background: #777777;
+    border-radius: 2px;
+    box-shadow: 0 0 2px rgba(0,0,0,0.1);
+}
+.footer {
+    text-align: center;
+    margin-top: 20px;
+    background: #eee;
+    padding: 30px 0;
+    color: #999;
+}
+.footer a{
+    color: #999;
+}
+.footer a:hover{
+    color: #777777;
+}
+
+
