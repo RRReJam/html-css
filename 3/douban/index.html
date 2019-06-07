@@ -1,0 +1,526 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>豆瓣</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .col{
+            float: left;
+        }
+        body{
+
+        }
+        .global-nav{
+            background: rgb(84,86,82);
+            width: 100%;
+        }
+        .left{
+            float: left;
+        }
+        .right{
+            float: right;
+        }
+        .global-nav .link-group{
+            padding: 6px;
+            font-size: 2px;
+        }
+        .global-nav .link-group a {
+            text-decoration: none;
+            color: #d5d5d5;
+            padding: 0 10px;
+        }
+        .global-nav .link-group a:hover{
+            color: whitesmoke;
+        }
+        .clearfix:after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .page-nav{
+            background: #f0f6f3;
+            padding: 3px;
+
+        }
+        .w{
+            margin:  0 auto;
+            width: 1080px;
+        }
+        .logo {
+            width: 159px;
+            height: 41px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .page-nav .link-group{
+             display: inline-block;
+            margin: 20px 50px;
+
+
+        }
+        .page-nav .link-group a{
+            display: inline-block;
+            text-decoration: none;
+            color: #037b82;
+            margin: 0 10px;
+        }
+        .page-nav .link-group a:hover{
+            background: #0f6674;
+            color: white;
+        }
+        .page-nav .search {
+            width: 30%;
+            margin-top: 18px;
+        }
+        .page-nav .search input{
+            height: 30px;
+            width:100%;
+            border: 1px solid #cccccc;
+            outline: none;
+            text-indent: 1em;
+
+        }
+        input::-webkit-input-placeholder{
+            color: #bbb;
+        }
+        .content{
+            margin-top: 30px;
+        }
+       .title{
+             font-size: 28px;
+        }
+        .content .item{
+            margin-top: 30px;
+
+        }
+        .content .like{
+            background-color: #fae9da;
+            padding: 5px;
+            width: 52px;
+            text-align: center;
+            color: #ca6445;
+            font-size: 13px;
+            margin-left: 5px;
+
+        }
+        .content .theme {
+            display: inline-block;
+
+        }
+        .content .theme a{
+            color: #259;
+            text-decoration: none;
+        }
+        .content .theme a:hover{
+            color: white;
+            background: #259;
+        }
+
+        .recommend .theme-content{
+             display: block;
+            margin: 10px 5px;
+        }
+        .recommend .theme-content img{
+            width: 70px;
+            margin: 10px;
+            vertical-align: middle;
+            float: left;
+
+        }
+        .recommend .theme-content .desc{
+            padding: 10px 10px 0 10px;
+            font-size: 13px;
+            float: left;
+            opacity: 0.5;
+            width: 70%;
+
+        }
+        .recommend{
+            width: 70%;
+        }
+        .recommend-group{
+            width: 20%;
+
+        }
+       .recommend .msg{
+           width: 90%;
+       }
+        .recommend .info{
+            display: inline-block;
+            margin: 10px 10px 10px 0;
+
+        }
+        .row .info{
+            color: #666;
+            margin: 10px 12px 10px 10px;
+            display: inline-block;
+            text-decoration: none;
+        }
+        .recommend .item{
+            border-bottom: 1px solid #e5e5e5;
+        }
+        .recommend-group .title {
+            font-size: 14px;
+            margin-top: 10px;
+            padding: 10px 0;
+            color: #666;
+            border-bottom: 1px solid #e5e5e5;
+        }
+        .recommend-group img{
+            width: 48px;
+            height: 48px;
+        }
+        .recommend-group .theme{
+            color: #37a;
+            margin-left: 5px;
+        }
+        .recommend-group .btn{
+            text-decoration: none;
+            font-size: 14px;
+            color: #37a;
+        }
+        .recommend-group .btn:hover{
+            color: white;
+            background:#37a;
+        }
+        .footer{
+            margin-top: 30px;
+        }
+        .footer a{
+            text-decoration: none;
+            color: #37a;
+        }
+        .footer a:hover{
+            color: white;
+            background: #37a;
+        }
+        .footer a:after{
+
+            content: '·';
+            position: relative;
+            left: 2px;
+
+        }
+        .footer  a:last-child:after {
+            display: none;
+        }
+
+
+
+    </style>
+</head>
+<body>
+<div class="global-nav clearfix">
+    <div class="col left link-group ">
+        <a href="">豆瓣</a>
+        <a href="">读书</a>
+        <a href="">电影</a>
+        <a href="">音乐</a>
+        <a href="">同城</a>
+        <a href="">小组</a>
+        <a href="">阅读</a>
+        <a href="">FM</a>
+        <a href="">时间</a>
+        <a href="">豆品</a>
+        <a href="">更多</a>
+    </div>
+    <div class="col right link-group">
+        <a href="">下载豆瓣客户端</a>
+        <a href="">登陆</a>
+        <a href="">注册</a>
+    </div>
+</div>
+<div class="main clearfix">
+    <div class="row page-nav clearfix ">
+        <div class="w clearfix">
+            <div class="col left logo ">
+                <img src="img/douban.png" alt="">
+            </div>
+            <div class="col link-group  ">
+                <a href="">精选</a>
+                <a href="">文化</a>
+                <a href="">行摄</a>
+                <a href="">娱乐</a>
+                <a href="">时尚</a>
+                <a href="">生活</a>
+                <a href="">科技</a>
+            </div>
+            <div class="col right search ">
+                <input type="text" placeholder="小组、话题">
+
+            </div>
+        </div>
+    </div>
+    <div class="row content w">
+        <div class="title">讨论精选</div>
+        <div class="recommend col">
+            <div class="item  clearfix">
+                    <div class="col like">5<br>喜欢</div>
+                <div class="col msg">
+                    <div class="bcc clearfix">
+                    <div class=" theme"><a href="">猫的眼睛真好看啊</a></div>
+                    <div class=" theme-content">
+                        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1539077139312&di=e42e35fde23b4a7894ed1e42b01659df&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F010d9256cab0ee6ac7252ce61a8d4d.jpg%402o.jpg" alt="">
+                        <div class="desc">来小组窥屏已久，今天忍不住晒眼睛了，跟宝石一样，好想看看你们的眼睛啊啊啊啊啊啊！小猫咪为什么这么可爱！</div>
+                    </div>
+                </div>
+                    <div class="row">
+                        <a href="#" class="info">来自猫小组</a>
+                        <span style="opacity: 0.5">昨天16:51</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="item  clearfix">
+                <div class="col like">5<br>喜欢</div>
+                <div class="col msg">
+                    <div class="bcc clearfix">
+                        <div class=" theme"><a href="">猫的眼睛真好看啊</a></div>
+                        <div class=" theme-content">
+                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1539077139312&di=e42e35fde23b4a7894ed1e42b01659df&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F010d9256cab0ee6ac7252ce61a8d4d.jpg%402o.jpg" alt="">
+                            <div class="desc">来小组窥屏已久，今天忍不住晒眼睛了，跟宝石一样，好想看看你们的眼睛啊啊啊啊啊啊！小猫咪为什么这么可爱！</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <a href="#" class="info">来自猫小组</a>
+                        <span style="opacity: 0.5">昨天16:51</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="item  clearfix">
+                <div class="col like">5<br>喜欢</div>
+                <div class="col msg">
+                    <div class="bcc clearfix">
+                        <div class=" theme"><a href="">猫的眼睛真好看啊</a></div>
+                        <div class=" theme-content">
+                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1539077139312&di=e42e35fde23b4a7894ed1e42b01659df&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F010d9256cab0ee6ac7252ce61a8d4d.jpg%402o.jpg" alt="">
+                            <div class="desc">来小组窥屏已久，今天忍不住晒眼睛了，跟宝石一样，好想看看你们的眼睛啊啊啊啊啊啊！小猫咪为什么这么可爱！</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <a href="#" class="info">来自猫小组</a>
+                        <span style="opacity: 0.5">昨天16:51</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="item  clearfix">
+                <div class="col like">5<br>喜欢</div>
+                <div class="col msg">
+                    <div class="bcc clearfix">
+                        <div class=" theme"><a href="">猫的眼睛真好看啊</a></div>
+                        <div class=" theme-content">
+                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1539077139312&di=e42e35fde23b4a7894ed1e42b01659df&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F010d9256cab0ee6ac7252ce61a8d4d.jpg%402o.jpg" alt="">
+                            <div class="desc">来小组窥屏已久，今天忍不住晒眼睛了，跟宝石一样，好想看看你们的眼睛啊啊啊啊啊啊！小猫咪为什么这么可爱！</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <a href="#" class="info">来自猫小组</a>
+                        <span style="opacity: 0.5">昨天16:51</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="col recommend-group">
+            <div class="title">值得加入的小组</div>
+            <div class="item">
+                <div class="cont clearfix" style="border-bottom: 1px solid #e5e5e5;">
+                <div class="col left img">
+                    <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1559911469857&di=0113c6872151b275cd58c61e74d1c027&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201707%2F11%2F20170711123343_4eQdM.jpeg" alt="">
+                </div>
+                <div class="col  msg">
+                    <div class="row theme"><a href="">喵星人~</a></div>
+                    <div class="row metadata">
+                        <span style="font-size: 13px">2312个成员</span>
+                        <a href="#" class="btn">+加入小组</a>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="cont clearfix" style="border-bottom: 1px solid #e5e5e5;">
+                    <div class="col left img">
+                        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1559911469857&di=0113c6872151b275cd58c61e74d1c027&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201707%2F11%2F20170711123343_4eQdM.jpeg" alt="">
+                    </div>
+                    <div class="col  msg">
+                        <div class="row theme"><a href="">喵星人~</a></div>
+                        <div class="row metadata">
+                            <span style="font-size: 13px">2312个成员</span>
+                            <a href="#" class="btn">+加入小组</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="cont clearfix" style="border-bottom: 1px solid #e5e5e5;">
+                    <div class="col left img">
+                        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1559911469857&di=0113c6872151b275cd58c61e74d1c027&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201707%2F11%2F20170711123343_4eQdM.jpeg" alt="">
+                    </div>
+                    <div class="col  msg">
+                        <div class="row theme"><a href="">喵星人~</a></div>
+                        <div class="row metadata">
+                            <span style="font-size: 13px">2312个成员</span>
+                            <a href="#" class="btn">+加入小组</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="cont clearfix" style="border-bottom: 1px solid #e5e5e5;">
+                    <div class="col left img">
+                        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1559911469857&di=0113c6872151b275cd58c61e74d1c027&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201707%2F11%2F20170711123343_4eQdM.jpeg" alt="">
+                    </div>
+                    <div class="col  msg">
+                        <div class="row theme"><a href="">喵星人~</a></div>
+                        <div class="row metadata">
+                            <span style="font-size: 13px">2312个成员</span>
+                            <a href="#" class="btn">+加入小组</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="cont clearfix" style="border-bottom: 1px solid #e5e5e5;">
+                    <div class="col left img">
+                        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1559911469857&di=0113c6872151b275cd58c61e74d1c027&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201707%2F11%2F20170711123343_4eQdM.jpeg" alt="">
+                    </div>
+                    <div class="col  msg">
+                        <div class="row theme"><a href="">喵星人~</a></div>
+                        <div class="row metadata">
+                            <span style="font-size: 13px">2312个成员</span>
+                            <a href="#" class="btn">+加入小组</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="cont clearfix" style="border-bottom: 1px solid #e5e5e5;">
+                    <div class="col left img">
+                        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1559911469857&di=0113c6872151b275cd58c61e74d1c027&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201707%2F11%2F20170711123343_4eQdM.jpeg" alt="">
+                    </div>
+                    <div class="col  msg">
+                        <div class="row theme"><a href="">喵星人~</a></div>
+                        <div class="row metadata">
+                            <span style="font-size: 13px">2312个成员</span>
+                            <a href="#" class="btn">+加入小组</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="cont clearfix" style="border-bottom: 1px solid #e5e5e5;">
+                    <div class="col left img">
+                        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1559911469857&di=0113c6872151b275cd58c61e74d1c027&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201707%2F11%2F20170711123343_4eQdM.jpeg" alt="">
+                    </div>
+                    <div class="col  msg">
+                        <div class="row theme"><a href="">喵星人~</a></div>
+                        <div class="row metadata">
+                            <span style="font-size: 13px">2312个成员</span>
+                            <a href="#" class="btn">+加入小组</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="cont clearfix" style="border-bottom: 1px solid #e5e5e5;">
+                    <div class="col left img">
+                        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1559911469857&di=0113c6872151b275cd58c61e74d1c027&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201707%2F11%2F20170711123343_4eQdM.jpeg" alt="">
+                    </div>
+                    <div class="col  msg">
+                        <div class="row theme"><a href="">喵星人~</a></div>
+                        <div class="row metadata">
+                            <span style="font-size: 13px">2312个成员</span>
+                            <a href="#" class="btn">+加入小组</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="cont clearfix" style="border-bottom: 1px solid #e5e5e5;">
+                    <div class="col left img">
+                        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1559911469857&di=0113c6872151b275cd58c61e74d1c027&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201707%2F11%2F20170711123343_4eQdM.jpeg" alt="">
+                    </div>
+                    <div class="col  msg">
+                        <div class="row theme"><a href="">喵星人~</a></div>
+                        <div class="row metadata">
+                            <span style="font-size: 13px">2312个成员</span>
+                            <a href="#" class="btn">+加入小组</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="cont clearfix" style="border-bottom: 1px solid #e5e5e5;">
+                    <div class="col left img">
+                        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1559911469857&di=0113c6872151b275cd58c61e74d1c027&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201707%2F11%2F20170711123343_4eQdM.jpeg" alt="">
+                    </div>
+                    <div class="col  msg">
+                        <div class="row theme"><a href="">喵星人~</a></div>
+                        <div class="row metadata">
+                            <span style="font-size: 13px">2312个成员</span>
+                            <a href="#" class="btn">+加入小组</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="cont clearfix" style="border-bottom: 1px solid #e5e5e5;">
+                    <div class="col left img">
+                        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1559911469857&di=0113c6872151b275cd58c61e74d1c027&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201707%2F11%2F20170711123343_4eQdM.jpeg" alt="">
+                    </div>
+                    <div class="col  msg">
+                        <div class="row theme"><a href="">喵星人~</a></div>
+                        <div class="row metadata">
+                            <span style="font-size: 13px">2312个成员</span>
+                            <a href="#" class="btn">+加入小组</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="cont clearfix" style="border-bottom: 1px solid #e5e5e5;">
+                    <div class="col left img">
+                        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1559911469857&di=0113c6872151b275cd58c61e74d1c027&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201707%2F11%2F20170711123343_4eQdM.jpeg" alt="">
+                    </div>
+                    <div class="col  msg">
+                        <div class="row theme"><a href="">喵星人~</a></div>
+                        <div class="row metadata">
+                            <span style="font-size: 13px">2312个成员</span>
+                            <a href="#" class="btn">+加入小组</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer clearfix">
+    <div class="w ">
+    <div class="col left">
+        <div class="metadata">© 2005－2018 douban.com, all rights reserved 北京豆网科技有限公司</div>
+    </div>
+    <div class="col right">
+        <div class="link-group">
+            <a href="#">关于豆瓣</a>
+            <a href="#">在豆瓣工作</a>
+            <a href="#">联系我们</a>
+            <a href="#">免责声明</a>
+            <a href="#">帮助中心</a>
+            <a href="#">移动应用</a>
+            <a href="#">豆瓣广告</a>
+        </div>
+    </div>
+    </div>
+</div>
+</body>
+</html>
