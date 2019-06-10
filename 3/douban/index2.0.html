@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>豆瓣2.0</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body,form {
+            margin: 0;
+            font-family: sans-serif;
+            font-size: 14px;
+        }
+        img{
+            max-width: 100%;
+        }
+        a{
+            text-decoration: none;
+        }
+        .row:before,.row:after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        .col{
+            float: left;
+        }
+        .container{
+            width: 1080px;
+            margin: 0 auto;
+        }
+        .col-1 {
+            width: 4.166666666666667%;
+        }
+
+        .col-2 {
+            width: 8.333333333333333%;
+        }
+
+        .col-3 {
+            width: 12.5%;
+        }
+
+        .col-4 {
+            width: 16.6666666666667%;
+        }
+
+        .col-5 {
+            width: 20.8333333333333%;
+        }
+
+        .col-6 {
+            width: 25%;
+        }
+
+        .col-7 {
+            width: 29.166666666667%;
+        }
+
+        .col-8 {
+            width: 33.3333333333333%;
+        }
+
+        .col-9 {
+            width: 37.5%;
+        }
+
+        .col-10 {
+            width: 41.666666666667%;
+        }
+
+        .col-11 {
+            width: 45.83333333333333%;
+        }
+
+        .col-12 {
+            width: 50%;
+        }
+
+        .col-13 {
+            width: 54.1666666666667%;
+        }
+
+        .col-14 {
+            width: 58.3333333333333%;
+        }
+
+        .col-15 {
+            width: 62.5%;
+        }
+
+        .col-16 {
+            width: 66.66666666666667%;
+        }
+
+        .col-17 {
+            width: 70.83333333333333%;
+        }
+
+        .col-18 {
+            width: 75%;
+        }
+
+        .col-19 {
+            width: 79.16666666667%;
+        }
+
+        .col-20 {
+            width: 83.33333333333%;
+        }
+
+        .col-21 {
+            width: 87.5%;
+        }
+
+        .col-22 {
+            width: 91.666666666666667%;
+        }
+
+        .col-23 {
+            width: 95.833333333333333%;
+        }
+
+        .col-24 {
+            width: 100%;
+        }
+        /*//全局样式*/
+        .nav-global {
+            background: #555555;
+        }
+        .nav-global a{
+            display: inline-block;
+            color: #cccccc;
+            padding: 5px 10px;
+            font-size: 12px;
+        }
+        .nav-global a:hover{
+            color: white;
+        }
+        .page-nav{
+            background: #f0f6f3;
+        }
+        .logo{
+            padding: 20px 60px 20px 0px;
+        }
+        .page-nav .link-group a {
+            display: inline-block;
+            margin: 30px 20px 20px 10px;
+            font-size: 15px;
+            color:#037b82 ;
+        }
+        .link-group a:hover{
+            color: white;
+            background: #037b82;
+        }
+        .search{
+            border: 0.5px solid #eee;
+            margin-top: 20px;
+        }
+        .search input[type=text]{
+            width: 240px;
+            height: 30px;
+            border: 0;
+            outline: none;
+        }
+        .search .btn-search{
+            padding: 5px ;
+        }
+        .main h1{
+            padding: 30px 0px 20px ;
+        }
+        .container .like{
+            width: 55px;
+            padding: 12px;
+            margin-right: 22px;
+            text-align: center;
+            color: #ca6445;
+            background: #fae9da;
+        }
+        .container .item{
+
+            padding: 10px 10px 10px 0 ;
+        }
+        .msg .title{
+            color: #259;
+            display: inline-block;
+        }
+        .msg .title:hover{
+            background-color: #259;
+            color: white;
+        }
+        .msg .contant{
+            margin: 10px 0 ;
+        }
+        .msg .contant img{
+            width: 60px;
+            height: 60px;
+            margin: 10px;
+        }
+        .msg .contant .desc {
+            opacity: 0.5;
+            font-size: 14px;
+
+        }
+        .msg .info{
+            margin-top: 50px;
+        }
+        .msg .info{
+            margin-top: 10px;
+
+        }
+        .msg .info span,.msg .info a{
+            color: #666;
+        }
+        .msg .info a:hover{
+            background-color: #117a8b;
+            color: white;
+        }
+        .container .item:after{
+            border: solid 0.5px #ddd;
+        }
+        .msg .info{
+            margin: 10px 0 20px;
+        }
+        .aside .title {
+            color: #666;
+        }
+        .aside .recommad{
+            margin: 20px 0 ;
+        }
+        .aside .recommad img{
+            width: 45px;
+            height: 45px;
+        }
+        .aside .group-msg .title{
+            display: inline-block;
+            color: #259;
+            margin-left: 15px;
+        }
+        .aside .group-msg .title:hover{
+            background: #259;
+            color: white;
+        }
+        .group-msg .info{
+            padding: 10px 16px 20px 16px
+        }
+        .group-msg .info span{
+            color: #666;
+        }
+        .group-msg .info a{
+            color: #259;
+            margin-left: 15px;
+        }
+        .group-msg .info a:hover{
+            background: #259;
+            color: white;
+        }
+        .recommad:after{
+            border: 0.5px solid #ddd;
+        }
+        .page{
+            width: 1080px;
+            margin: 0 auto;
+        }
+        .page .agroup{
+            margin-left: 30px;
+        }
+        .page .agroup a{
+            margin: 0 7px;
+            color: #259;
+        }
+        .footer{
+            padding-top: 10px;
+        }
+        .footer .patch{
+            padding: 10px;
+        }
+        .footer .patch a{
+           color: #259;
+        }
+        .footer .patch a:after{
+            content: '·';
+        }
+        .footer .patch a:hover{
+            background: #259;
+            color: white;
+        }
+        .footer .link-group a:last-child:after {
+            display: none;
+        }
+        .footer:before{
+            border: 0.5px solid #ddd;
+        }
+        .page{
+            margin-bottom: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="row nav-global">
+    <div class="col col-16 ">
+        <a href="">豆瓣</a>
+        <a href="">读书</a>
+        <a href="">电影</a>
+        <a href="">音乐</a>
+        <a href="">同城</a>
+        <a href="">小组</a>
+        <a href="">阅读</a>
+        <a href="">FM</a>
+        <a href="">时间</a>
+        <a href="">豆品</a>
+        <a href="">更多</a>
+    </div>
+    <div class="col col-8 " style="text-align: right">
+        <a href="">下载豆瓣客户端</a>
+        <a href="">登陆</a>
+        <a href="">注册</a>
+    </div>
+</div>
+<div class="row main ">
+    <div class="row page-nav">
+        <div class="row container">
+            <a href="" class="col col-4 logo">
+                <img src="https://img3.doubanio.com/f/shire/86033885f71d164e11b4ecc2fc06e945fe01c10b/pics/nav/lg_group_a11@2x.png" alt="logo">
+            </a>
+            <div class="col col-14 link-group">
+                <a href="#">精选</a>
+                <a href="#">文化</a>
+                <a href="#">行摄</a>
+                <a href="#">娱乐</a>
+                <a href="#">时尚</a>
+                <a href="#">生活</a>
+                <a href="#">科技</a>
+            </div>
+            <div class="col col-6 search">
+                <form action="">
+                <input type="text" placeholder="话题、小组"><button class="btn-search"><img src="https://img3.doubanio.com/f/shire/f71f15922ebd7c0ff0ea0e7a25577529efd8981a/pics/icon/bn_srh_1.png" alt=""></button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <h1 class="container">讨论精选</h1>
+    <div class="row container">
+        <div class="col col-16">
+            <div class="row item">
+                <div class="col col-3 like">
+                    5<br>喜欢
+                </div>
+                <div class="col col-21 msg">
+                    <div class="title">探讨原生家庭的影响</div>
+                    <div class="row contant">
+                        <div class="col col-4 icon">
+                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1539102322517&di=7592c039221e8f5967234047d6dac105&imgtype=0&src=http%3A%2F%2Fd2ta15t0ay558v.cloudfront.net%2Fplans%2F836%2F320x320.jpg"
+                                 alt="#">
+                        </div>
+                        <p class="col col-20 desc">楼主这次想谈谈原生家庭对讨好型人格的影响。 首先，提出整个贴子的中心思想：↓
+                            前一个月楼主开贴写了一些工作和感情上的自我修正的方法，然而最近楼主自己是在家庭方面经历了一些事，加...</p>
+                        </div>
+                     <div class="info row">
+                        <span>来自</span><a href="" class="info-group">讨好型人格治疗所小组</a>
+                        <span>今天12:16</span>
+                    </div>
+
+
+            </div>
+            </div>
+            <div class="row item">
+                <div class="col col-3 like">
+                    5<br>喜欢
+                </div>
+                <div class="col col-21 msg">
+                    <div class="title">探讨原生家庭的影响</div>
+                    <div class="row contant">
+                        <div class="col col-4 icon">
+                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1539102322517&di=7592c039221e8f5967234047d6dac105&imgtype=0&src=http%3A%2F%2Fd2ta15t0ay558v.cloudfront.net%2Fplans%2F836%2F320x320.jpg"
+                                 alt="#">
+                        </div>
+                        <p class="col col-20 desc">楼主这次想谈谈原生家庭对讨好型人格的影响。 首先，提出整个贴子的中心思想：↓
+                            前一个月楼主开贴写了一些工作和感情上的自我修正的方法，然而最近楼主自己是在家庭方面经历了一些事，加...</p>
+                    </div>
+                    <div class="info row">
+                        <span>来自</span><a href="" class="info-group">讨好型人格治疗所小组</a>
+                        <span>今天12:16</span>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="row item">
+                <div class="col col-3 like">
+                    5<br>喜欢
+                </div>
+                <div class="col col-21 msg">
+                    <div class="title">探讨原生家庭的影响</div>
+                    <div class="row contant">
+                        <div class="col col-4 icon">
+                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1539102322517&di=7592c039221e8f5967234047d6dac105&imgtype=0&src=http%3A%2F%2Fd2ta15t0ay558v.cloudfront.net%2Fplans%2F836%2F320x320.jpg"
+                                 alt="#">
+                        </div>
+                        <p class="col col-20 desc">楼主这次想谈谈原生家庭对讨好型人格的影响。 首先，提出整个贴子的中心思想：↓
+                            前一个月楼主开贴写了一些工作和感情上的自我修正的方法，然而最近楼主自己是在家庭方面经历了一些事，加...</p>
+                    </div>
+                    <div class="info row">
+                        <span>来自</span><a href="" class="info-group">讨好型人格治疗所小组</a>
+                        <span>今天12:16</span>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="row item">
+                <div class="col col-3 like">
+                    5<br>喜欢
+                </div>
+                <div class="col col-21 msg">
+                    <div class="title">探讨原生家庭的影响</div>
+                    <div class="row contant">
+                        <div class="col col-4 icon">
+                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1539102322517&di=7592c039221e8f5967234047d6dac105&imgtype=0&src=http%3A%2F%2Fd2ta15t0ay558v.cloudfront.net%2Fplans%2F836%2F320x320.jpg"
+                                 alt="#">
+                        </div>
+                        <p class="col col-20 desc">楼主这次想谈谈原生家庭对讨好型人格的影响。 首先，提出整个贴子的中心思想：↓
+                            前一个月楼主开贴写了一些工作和感情上的自我修正的方法，然而最近楼主自己是在家庭方面经历了一些事，加...</p>
+                    </div>
+                    <div class="info row">
+                        <span>来自</span><a href="" class="info-group">讨好型人格治疗所小组</a>
+                        <span>今天12:16</span>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="row item">
+                <div class="col col-3 like">
+                    5<br>喜欢
+                </div>
+                <div class="col col-21 msg">
+                    <div class="title">探讨原生家庭的影响</div>
+                    <div class="row contant">
+                        <div class="col col-4 icon">
+                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1539102322517&di=7592c039221e8f5967234047d6dac105&imgtype=0&src=http%3A%2F%2Fd2ta15t0ay558v.cloudfront.net%2Fplans%2F836%2F320x320.jpg"
+                                 alt="#">
+                        </div>
+                        <p class="col col-20 desc">楼主这次想谈谈原生家庭对讨好型人格的影响。 首先，提出整个贴子的中心思想：↓
+                            前一个月楼主开贴写了一些工作和感情上的自我修正的方法，然而最近楼主自己是在家庭方面经历了一些事，加...</p>
+                    </div>
+                    <div class="info row">
+                        <span>来自</span><a href="" class="info-group">讨好型人格治疗所小组</a>
+                        <span>今天12:16</span>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="row item">
+                <div class="col col-3 like">
+                    5<br>喜欢
+                </div>
+                <div class="col col-21 msg">
+                    <div class="title">探讨原生家庭的影响</div>
+                    <div class="row contant">
+                        <div class="col col-4 icon">
+                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1539102322517&di=7592c039221e8f5967234047d6dac105&imgtype=0&src=http%3A%2F%2Fd2ta15t0ay558v.cloudfront.net%2Fplans%2F836%2F320x320.jpg"
+                                 alt="#">
+                        </div>
+                        <p class="col col-20 desc">楼主这次想谈谈原生家庭对讨好型人格的影响。 首先，提出整个贴子的中心思想：↓
+                            前一个月楼主开贴写了一些工作和感情上的自我修正的方法，然而最近楼主自己是在家庭方面经历了一些事，加...</p>
+                    </div>
+                    <div class="info row">
+                        <span>来自</span><a href="" class="info-group">讨好型人格治疗所小组</a>
+                        <span>今天12:16</span>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="row item">
+                <div class="col col-3 like">
+                    5<br>喜欢
+                </div>
+                <div class="col col-21 msg">
+                    <div class="title">探讨原生家庭的影响</div>
+                    <div class="row contant">
+                        <div class="col col-4 icon">
+                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1539102322517&di=7592c039221e8f5967234047d6dac105&imgtype=0&src=http%3A%2F%2Fd2ta15t0ay558v.cloudfront.net%2Fplans%2F836%2F320x320.jpg"
+                                 alt="#">
+                        </div>
+                        <p class="col col-20 desc">楼主这次想谈谈原生家庭对讨好型人格的影响。 首先，提出整个贴子的中心思想：↓
+                            前一个月楼主开贴写了一些工作和感情上的自我修正的方法，然而最近楼主自己是在家庭方面经历了一些事，加...</p>
+                    </div>
+                    <div class="info row">
+                        <span>来自</span><a href="" class="info-group">讨好型人格治疗所小组</a>
+                        <span>今天12:16</span>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="row item">
+                <div class="col col-3 like">
+                    5<br>喜欢
+                </div>
+                <div class="col col-21 msg">
+                    <div class="title">探讨原生家庭的影响</div>
+                    <div class="row contant">
+                        <div class="col col-4 icon">
+                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1539102322517&di=7592c039221e8f5967234047d6dac105&imgtype=0&src=http%3A%2F%2Fd2ta15t0ay558v.cloudfront.net%2Fplans%2F836%2F320x320.jpg"
+                                 alt="#">
+                        </div>
+                        <p class="col col-20 desc">楼主这次想谈谈原生家庭对讨好型人格的影响。 首先，提出整个贴子的中心思想：↓
+                            前一个月楼主开贴写了一些工作和感情上的自我修正的方法，然而最近楼主自己是在家庭方面经历了一些事，加...</p>
+                    </div>
+                    <div class="info row">
+                        <span>来自</span><a href="" class="info-group">讨好型人格治疗所小组</a>
+                        <span>今天12:16</span>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="col col-8 aside">
+            <div class="row title">值得加入的小组</div>
+            <div class="row recommad">
+                <div class="col col-4 sm-icon">
+                    <img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2224379351,2052764213&fm=26&gp=0.jpg" alt="#">
+                </div>
+                <div class="col col-20 group-msg">
+                    <div class="title">我们一起战“痘”！</div>
+                    <div class="row info ">
+                        <span >23123个战友</span>
+                        <a href="#" class="group">+加入小组</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row recommad">
+                <div class="col col-4 sm-icon">
+                    <img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2224379351,2052764213&fm=26&gp=0.jpg" alt="#">
+                </div>
+                <div class="col col-20 group-msg">
+                    <div class="title">我们一起战“痘”！</div>
+                    <div class="row info ">
+                        <span >23123个战友</span>
+                        <a href="#" class="group">+加入小组</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row recommad">
+                <div class="col col-4 sm-icon">
+                    <img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2224379351,2052764213&fm=26&gp=0.jpg" alt="#">
+                </div>
+                <div class="col col-20 group-msg">
+                    <div class="title">我们一起战“痘”！</div>
+                    <div class="row info ">
+                        <span >23123个战友</span>
+                        <a href="#" class="group">+加入小组</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row recommad">
+                <div class="col col-4 sm-icon">
+                    <img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2224379351,2052764213&fm=26&gp=0.jpg" alt="#">
+                </div>
+                <div class="col col-20 group-msg">
+                    <div class="title">我们一起战“痘”！</div>
+                    <div class="row info ">
+                        <span >23123个战友</span>
+                        <a href="#" class="group">+加入小组</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row recommad">
+                <div class="col col-4 sm-icon">
+                    <img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2224379351,2052764213&fm=26&gp=0.jpg" alt="#">
+                </div>
+                <div class="col col-20 group-msg">
+                    <div class="title">我们一起战“痘”！</div>
+                    <div class="row info ">
+                        <span >23123个战友</span>
+                        <a href="#" class="group">+加入小组</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row recommad">
+                <div class="col col-4 sm-icon">
+                    <img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2224379351,2052764213&fm=26&gp=0.jpg" alt="#">
+                </div>
+                <div class="col col-20 group-msg">
+                    <div class="title">我们一起战“痘”！</div>
+                    <div class="row info ">
+                        <span >23123个战友</span>
+                        <a href="#" class="group">+加入小组</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row recommad">
+                <div class="col col-4 sm-icon">
+                    <img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2224379351,2052764213&fm=26&gp=0.jpg" alt="#">
+                </div>
+                <div class="col col-20 group-msg">
+                    <div class="title">我们一起战“痘”！</div>
+                    <div class="row info ">
+                        <span >23123个战友</span>
+                        <a href="#" class="group">+加入小组</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row recommad">
+                <div class="col col-4 sm-icon">
+                    <img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2224379351,2052764213&fm=26&gp=0.jpg" alt="#">
+                </div>
+                <div class="col col-20 group-msg">
+                    <div class="title">我们一起战“痘”！</div>
+                    <div class="row info ">
+                        <span >23123个战友</span>
+                        <a href="#" class="group">+加入小组</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row recommad">
+                <div class="col col-4 sm-icon">
+                    <img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2224379351,2052764213&fm=26&gp=0.jpg" alt="#">
+                </div>
+                <div class="col col-20 group-msg">
+                    <div class="title">我们一起战“痘”！</div>
+                    <div class="row info ">
+                        <span >23123个战友</span>
+                        <a href="#" class="group">+加入小组</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row col-16 container page">
+        <a href="" class="col col-3 " style="opacity: 0.5">前页</a>
+        <div class="col col-8 agroup">
+            <a href="#">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">6</a>
+            <a href="#">7</a>
+            <a href="#">8</a>
+            <a href="#">9</a>
+            <a href="#">...</a>
+            <a href="#">296</a>
+            <a href="#">297</a>
+        </div>
+        <a href="" class="col col-12">后页</a>
+    </div>
+</div>
+<div class="row footer container">
+    <div class="col col-12 patch">© 2005－2018 douban.com, all rights reserved 北京豆网科技有限公司</div>
+    <div class="col col-12 link-group patch">
+        <a href="#">关于豆瓣</a>
+        <a href="#">在豆瓣工作</a>
+        <a href="#">联系我们</a>
+        <a href="#">免责声明</a>
+        <a href="#">帮助中心</a>
+        <a href="#">动应用</a>
+        <a href="#">豆瓣广告</a>
+    </div>
+</div>
+</body>
+</html>
